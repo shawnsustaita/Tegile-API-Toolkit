@@ -15,7 +15,7 @@ tegile_list_snapshots() {
 		return 128
 	}
 	
-	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}\", \"${5}\"]" https://${1}/zebi/api/v1/listSnapshots
+	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}\", \"${5}\"]" https://${1}/zebi/api/v2/listSnapshots
 }
 
 
@@ -27,7 +27,7 @@ tegile_list_shares() {
         return 128
     }
 
-	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}\", \"${3}\", true]" https://${1}/zebi/api/v1/listShares
+	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}\", \"${3}\", true]" https://${1}/zebi/api/v2/listShares
 }
 
 tegile_delete_share() {
@@ -36,7 +36,7 @@ tegile_delete_share() {
         return 128
     }
 
-	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}\", false, false]" https://${1}/zebi/api/v1/deleteShare
+	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}\", false, false]" https://${1}/zebi/api/v2/deleteShare
 }
 
 tegile_create_share_snapshot() {
@@ -45,7 +45,7 @@ tegile_create_share_snapshot() {
         return 128
     }
 
-	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[{\"poolName\": \"${2}\", \"projectName\": \"${3}\", \"name\": \"${4}\", \"datasetPath\": \"${2}/Local/${3}/${4}\", \"local\": true}, \"${5}\", true]" https://${1}/zebi/api/v1/createShareSnapshot
+	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[{\"poolName\": \"${2}\", \"projectName\": \"${3}\", \"name\": \"${4}\", \"datasetPath\": \"${2}/Local/${3}/${4}\", \"local\": true}, \"${5}\", true]" https://${1}/zebi/api/v2/createShareSnapshot
 }
 
 tegile_delete_share_snapshot() {
@@ -54,7 +54,7 @@ tegile_delete_share_snapshot() {
         return 128
     }
 
-	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}@${5}\", false]" https://${1}/zebi/api/v1/deleteShareSnapshot
+	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}@${5}\", false]" https://${1}/zebi/api/v2/deleteShareSnapshot
 }
 
 tegile_create_share_clone() {
@@ -63,7 +63,7 @@ tegile_create_share_clone() {
         return 128
     }
 
-	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}@${5}\", \"${6}\", true]" https://${1}/zebi/api/v1/cloneShareSnapshot
+	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}@${5}\", \"${6}\", true]" https://${1}/zebi/api/v2/cloneShareSnapshot
 }
 
 
