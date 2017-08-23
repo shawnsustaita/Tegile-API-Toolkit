@@ -36,7 +36,7 @@ tegile_delete_share() {
         return 128
     }
 
-	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}\", false, false]" https://${1}/zebi/api/v2/deleteShare
+	$CURL -H "Authorization:Basic ${Auth_TOKEN}" -d "[\"${2}/Local/${3}/${4}\", true, false]" https://${1}/zebi/api/v2/deleteShare
 }
 
 tegile_create_share_snapshot() {
